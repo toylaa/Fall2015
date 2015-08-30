@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My First HTML  </title>
+    </head>
+          <body>
+              
+               <p><b>   DropDown Menus 1&2</b></p>
+            <select>
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+                <option>Option 4</option>
+                <option>Option 5</option>
+            </select>
+
+             <select>
+                <option>Option 6</option>
+                <option>Option 7</option>
+                <option>Option 8</option>
+                <option>Option 9</option>
+                <option>Option 10</option>
+            </select>
+            
+            <button name="button">Feelin Lucky?
+                
+            </button>
+            
+            <ul>
+                <li><a href="https://www.google.com ">SearchOption A</a></li>
+                <li><a href="https://www.yahoo.com">SearchOption B</a></li>
+                <li><a href="https://www.bing.com">SearchOption C</a></li>
+            </ul>
+
+    </body>
+</html>
