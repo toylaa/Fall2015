@@ -5,7 +5,7 @@
     </head>
           <body>
               
-               <p><b>   DropDown Menus 1&2</b></p>
+               <p><b>DropDown Menus 1&2</b></p>
             <select>
                 <option>Option 1</option>
                 <option>Option 2</option>
