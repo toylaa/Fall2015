@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>AutoComplete </title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.0/bootstrap3-typeahead.min.js">
+  </head>
+  <body>
+    <div class="container">
+        <div class="page-header">
+          <h1>What is your favorite exercise?</h1>
+          <small>Please add it to this database of awesome exercises.</small>
+        </div>
+        
+        <form class="form-horizontal">
+          <div class ="well">
+            <input type="text" class="span3" id="typeahead" data-provide="typeahead">
+            
+            <a href="#" class="btn btn-success">Submit
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </a>
+          </div>
+          
+        </form>
+        
+        
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src= "cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    
+
+    <script type="text/javascript">
+
+    $(function() {
+      
+      $("#typeahead").typeahead( {
+        source: function(query,process){
+        $.ajax({
+          url: 'connect.php',
+          type: 'POST',
+          data: 'query=' + query,
+          dataType: 'JSON',
+          async: true,
+          success: function(data){
+            process.log(data);
+          }
+        });
+       }}
+    
+    </script>
+
+
+  </body>
+</html>
