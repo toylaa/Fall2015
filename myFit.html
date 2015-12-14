@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>myFit_ Calculator</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" type="text/css" />
+    </head>
+  <body>
+    
+    
+     <div class="container">
+      
+      
+          <nav class="navbar navbar-default">
+            <div class="center-block">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <img src="dumbell.png" width="40px" />
+              </div>
+          
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  <li class="active"><a href="myCRUD.php">Excercise List</a></li>
+                  <li class="active"><a href="myCRUD2.php">Friends</a></li>
+                  <li class="active"><a href="https://www.google.com">Google</a></li>
+                </ul>
+                
+              </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+          </nav>
+      
+      
+      <div class= "center-block"> 
+        <div class="page-header">
+          <div class="center-block text-success">
+          <h1>myFIT<blockquote id="prompt">-Whats your BMI?</blockquote> </h1>
+          </div>  
+        </div>
+  <form action = "" id = "bmiForm" >
+    
+    
+        <div class= container>
+        
+        <div class='alert' style="display: none" id="myAlert">
+            <button type="button" class="close" aria-label="Close">
+              <span aria-hidden="true"></span>
+            </button>
+            <h3></h3>
+          </div>
+        
+        
+        
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="inputHeight">Height</label>
+            <div class="col-md-4 col-md-offset-4">
+                <div class="input-group">
+                  
+                  <input type="number" class="form-control input-lg" id="txtHeight" placeholder="Inches">
+                  <div class="input-group-addon">in.</div>
+                </div>
+            </div>
+            
+          </div>
+          <div class="form-group ">
+            <label class="col-sm-2 control-label" for="inputWeight">Weight</label>
+            <div class="col-md-4 col-md-offset-4">
+                <div class="input-group">
+                  
+                  <input type="number" class="form-control input-lg" id="txtWeight" placeholder="Pounds">
+                  <div class="input-group-addon">lbs.</div>
+                </div>
+            </div>
+          </div>
+          
+          </div>
+          <!--button(s)--> 
+          
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-xs-4">
+              <button type="submit" onclick=getBMI() class="btn btn-success">Calculate
+              <span class="glyphicon glyphicon-user" aria-hidden="false"></span>
+                </button>
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src= "cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript">
+      
+    function getBMI()
+      {
+    
+    var height = document.getElementById("txtHeight");
+    var weight = document.getElementById("txtWeight");
+    var bmi = (weight)*(703);
+    var temp = height^2;
+    bmi = bmi/temp;
+     
+      $("#myAlert").addClass("alert-success").show()
+                    .find("h3").html("Your bmi is" + bmi);
+                    
+     document.getElementById("prompt").innerHTML = "Your BMI is " + bmi;
+      return bmi;
+      }
+        
+         
+      
+    </script>
+  </body>
+</html>
